@@ -1,0 +1,288 @@
+1: /* A program to perform selection sort on a 10
+2:    element array. */
+3: 
+4: int x[10];
+	4: Reserved word: int
+	4: ID, Name = x
+	4: Symbol: [
+	4: Number, Value = 10
+	4: Symbol: ]
+	4: Symbol: ;
+5: 
+6: int minloc ( int a[], int low, int high )
+	6: Reserved word: int
+	6: ID, Name = minloc
+	6: Symbol: (
+	6: Reserved word: int
+	6: ID, Name = a
+	6: Symbol: [
+	6: Symbol: ]
+	6: Symbol: ,
+	6: Reserved word: int
+	6: ID, Name = low
+	6: Symbol: ,
+	6: Reserved word: int
+	6: ID, Name = high
+	6: Symbol: )
+7: {	int i; int x; int k;
+	7: Symbol: {
+	7: Reserved word: int
+	7: ID, Name = i
+	7: Symbol: ;
+	7: Reserved word: int
+	7: ID, Name = x
+	7: Symbol: ;
+	7: Reserved word: int
+	7: ID, Name = k
+	7: Symbol: ;
+8: 	k = low;
+	8: ID, Name = k
+	8: Symbol: =
+	8: ID, Name = low
+	8: Symbol: ;
+9: 	x = a[low];
+	9: ID, Name = x
+	9: Symbol: =
+	9: ID, Name = a
+	9: Symbol: [
+	9: ID, Name = low
+	9: Symbol: ]
+	9: Symbol: ;
+10: 	i = low + 1;
+	10: ID, Name = i
+	10: Symbol: =
+	10: ID, Name = low
+	10: Symbol: +
+	10: Number, Value = 1
+	10: Symbol: ;
+11: 	while (i < high)
+	11: Reserved word: while
+	11: Symbol: (
+	11: ID, Name = i
+	11: Symbol: <
+	11: ID, Name = high
+	11: Symbol: )
+12: 	{	if (a[i] < x)
+	12: Symbol: {
+	12: Reserved word: if
+	12: Symbol: (
+	12: ID, Name = a
+	12: Symbol: [
+	12: ID, Name = i
+	12: Symbol: ]
+	12: Symbol: <
+	12: ID, Name = x
+	12: Symbol: )
+13: 			{ x = a[i];
+	13: Symbol: {
+	13: ID, Name = x
+	13: Symbol: =
+	13: ID, Name = a
+	13: Symbol: [
+	13: ID, Name = i
+	13: Symbol: ]
+	13: Symbol: ;
+14: 			  k = i;  }
+	14: ID, Name = k
+	14: Symbol: =
+	14: ID, Name = i
+	14: Symbol: ;
+	14: Symbol: }
+15: 		i = i + 1;
+	15: ID, Name = i
+	15: Symbol: =
+	15: ID, Name = i
+	15: Symbol: +
+	15: Number, Value = 1
+	15: Symbol: ;
+16: 	}
+	16: Symbol: }
+17: 	return k;
+	17: Reserved word: return
+	17: ID, Name = k
+	17: Symbol: ;
+18: }
+	18: Symbol: }
+19: 
+20: void sort( int a[], int low, int high)
+	20: Reserved word: void
+	20: ID, Name = sort
+	20: Symbol: (
+	20: Reserved word: int
+	20: ID, Name = a
+	20: Symbol: [
+	20: Symbol: ]
+	20: Symbol: ,
+	20: Reserved word: int
+	20: ID, Name = low
+	20: Symbol: ,
+	20: Reserved word: int
+	20: ID, Name = high
+	20: Symbol: )
+21: {	int i; int k;
+	21: Symbol: {
+	21: Reserved word: int
+	21: ID, Name = i
+	21: Symbol: ;
+	21: Reserved word: int
+	21: ID, Name = k
+	21: Symbol: ;
+22: 	i = low;	
+	22: ID, Name = i
+	22: Symbol: =
+	22: ID, Name = low
+	22: Symbol: ;
+23: 
+24: 	while (i < high-1)
+	24: Reserved word: while
+	24: Symbol: (
+	24: ID, Name = i
+	24: Symbol: <
+	24: ID, Name = high
+	24: Symbol: -
+	24: Number, Value = 1
+	24: Symbol: )
+25: 	{	int t;
+	25: Symbol: {
+	25: Reserved word: int
+	25: ID, Name = t
+	25: Symbol: ;
+26: 		k = minloc(a,i,high,i);
+	26: ID, Name = k
+	26: Symbol: =
+	26: ID, Name = minloc
+	26: Symbol: (
+	26: ID, Name = a
+	26: Symbol: ,
+	26: ID, Name = i
+	26: Symbol: ,
+	26: ID, Name = high
+	26: Symbol: ,
+	26: ID, Name = i
+	26: Symbol: )
+	26: Symbol: ;
+27: 		t = a[k];
+	27: ID, Name = t
+	27: Symbol: =
+	27: ID, Name = a
+	27: Symbol: [
+	27: ID, Name = k
+	27: Symbol: ]
+	27: Symbol: ;
+28: 		a[k] = a[i];
+	28: ID, Name = a
+	28: Symbol: [
+	28: ID, Name = k
+	28: Symbol: ]
+	28: Symbol: =
+	28: ID, Name = a
+	28: Symbol: [
+	28: ID, Name = i
+	28: Symbol: ]
+	28: Symbol: ;
+29: 		a[i] = t;
+	29: ID, Name = a
+	29: Symbol: [
+	29: ID, Name = i
+	29: Symbol: ]
+	29: Symbol: =
+	29: ID, Name = t
+	29: Symbol: ;
+30: 		i = i + 1;
+	30: ID, Name = i
+	30: Symbol: =
+	30: ID, Name = i
+	30: Symbol: +
+	30: Number, Value = 1
+	30: Symbol: ;
+31: 	}
+	31: Symbol: }
+32: }
+	32: Symbol: }
+33: 
+34: void main(void)
+	34: Reserved word: void
+	34: ID, Name = main
+	34: Symbol: (
+	34: Reserved word: void
+	34: Symbol: )
+35: {	int i;
+	35: Symbol: {
+	35: Reserved word: int
+	35: ID, Name = i
+	35: Symbol: ;
+36: 	i = 0;
+	36: ID, Name = i
+	36: Symbol: =
+	36: Number, Value = 0
+	36: Symbol: ;
+37: 	while (i < 10)
+	37: Reserved word: while
+	37: Symbol: (
+	37: ID, Name = i
+	37: Symbol: <
+	37: Number, Value = 10
+	37: Symbol: )
+38: 	{	x[i] = input();
+	38: Symbol: {
+	38: ID, Name = x
+	38: Symbol: [
+	38: ID, Name = i
+	38: Symbol: ]
+	38: Symbol: =
+	38: ID, Name = input
+	38: Symbol: (
+	38: Symbol: )
+	38: Symbol: ;
+39: 		i = i + 1; }
+	39: ID, Name = i
+	39: Symbol: =
+	39: ID, Name = i
+	39: Symbol: +
+	39: Number, Value = 1
+	39: Symbol: ;
+	39: Symbol: }
+40: 	sort(x,0,10);
+	40: ID, Name = sort
+	40: Symbol: (
+	40: ID, Name = x
+	40: Symbol: ,
+	40: Number, Value = 0
+	40: Symbol: ,
+	40: Number, Value = 10
+	40: Symbol: )
+	40: Symbol: ;
+41: 	i = 0;
+	41: ID, Name = i
+	41: Symbol: =
+	41: Number, Value = 0
+	41: Symbol: ;
+42: 	while (i < 10)
+	42: Reserved word: while
+	42: Symbol: (
+	42: ID, Name = i
+	42: Symbol: <
+	42: Number, Value = 10
+	42: Symbol: )
+43: 	{	output(x[i]);
+	43: Symbol: {
+	43: ID, Name = output
+	43: Symbol: (
+	43: ID, Name = x
+	43: Symbol: [
+	43: ID, Name = i
+	43: Symbol: ]
+	43: Symbol: )
+	43: Symbol: ;
+44: 		i = i + 1; }
+	44: ID, Name = i
+	44: Symbol: =
+	44: ID, Name = i
+	44: Symbol: +
+	44: Number, Value = 1
+	44: Symbol: ;
+	44: Symbol: }
+45: }
+	45: Symbol: }
+46: 
+	46: EOF
